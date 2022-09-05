@@ -127,7 +127,7 @@ def main():
         confusion_matrix = pd.crosstab(confusion_matrix["Actual Labels"], confusion_matrix["Predicted Labels"],
                                        rownames=["Actual"], colnames=["Predicted"])
         fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 5))
-        ax = sns.heatmap(confusion_matrix, annot=True,fmt=".0f")
+        ax = sns.heatmap(confusion_matrix, annot=True,fmt=".0f",cmap="viridis")
         ax.set_title("Confusion Matrix")
         st.write(fig)
 
