@@ -38,7 +38,7 @@ def main():
     try:
         fig = px.histogram(df, x="is_legendary", color="is_legendary",title="Verteilung der Klasse is_legendary (Legendäre Pokemons)")
         #fig.update_layout(xaxis_range=[0,1])
-        fig.update_layout(xaxis = dict(tickmode = 'array',tickvals = [0, 1],ticktext = ["0","1]))
+        fig.update_layout(xaxis = dict(tickmode = 'array',tickvals = [0, 1],ticktext = ["0","1"]))
         fig.update_layout(yaxis_title="Anzahl")
         st.plotly_chart(fig, use_container_width=True)
     except:
