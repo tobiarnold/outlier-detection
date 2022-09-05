@@ -36,7 +36,7 @@ def main():
     st.markdown("""----""")
     st.title("📊 Diagramme")
     try:
-        fig = px.histogram(df, x="is_legendary", color="is_legendary",title="Verteilung der Klasse is_legendary (Legendäre Pokemons)")
+        fig = px.histogram(df, x="is_legendary", color="is_legendary",title="Verteilung der Klasse is_legendary (Legendäre Pokemons)",layout_xaxis_range=[0,1])
         fig.update_layout(yaxis_title="Anzahl")
         st.plotly_chart(fig, use_container_width=True)
     except:
@@ -61,7 +61,7 @@ def main():
     st.plotly_chart(fig, use_container_width=True)
     #st.dataframe(df_corr)
     st.markdown("""----""")
-    st.title("👨‍🔬 Algorithmen zur Ausreißer Erkennung")
+    st.title("👨‍🔬 Algorithmen zur Anomaly Detection")
     st.write("Du hast "+str(algo)+" gewählt.")
     X = df.drop(columns =["name","is_legendary"])
     y = df["is_legendary"]
