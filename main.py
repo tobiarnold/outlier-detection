@@ -19,7 +19,7 @@ def main():
                - Die folgende Anwendung untersucht die Anomalien bei Pokemons
                - Der Datensatz enthält 781 Pokemons und deren Eigenschaften
                - Die Spalte is_legendary gibt an, ob ein Pokemon als legendär zu klassifizieren ist (Anomaly)
-               - bei Zugriff mit mobilen Geräten ist der Filter für die Algorithmen standardmäßig ausgeblendet und lässt sich mit dem Pfeil oben links wieder einblenden
+               ⚠️ bei Zugriff mit mobilen Geräten ist der Filter für die Algorithmen standardmäßig ausgeblendet und lässt sich mit dem Pfeil oben links wieder einblenden
                """)
     st.markdown("""----""")
     with st.sidebar.header("💡 Algorithmus auswählen"):
