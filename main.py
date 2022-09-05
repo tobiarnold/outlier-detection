@@ -30,7 +30,7 @@ def main():
             nu = st.sidebar.slider("nu für One-Class SVM auswählen:", 0.0001, 0.9999, 0.5, 0.01)
             n_estimators = st.sidebar.slider("n_estimators für Isolation Forest auswählen:", 50, 500, 200, 10)
     st.title("👩‍💻 Tabelle")
-    df=pd.read_csv(r"C:\Users\Besitzer\Desktop\Pokemon1.csv")
+    df=pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/outlier-detection/main/pokemon1.csv")
     df_show = df.style.format({"height_m": "{:,.1f}","weight_kg": "{:,.1f}"})
     st.dataframe(df_show)
     st.markdown("""----""")
