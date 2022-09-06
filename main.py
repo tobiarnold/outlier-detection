@@ -42,7 +42,7 @@ def main():
         #fig.update_layout(xaxis_range=[0,1])
         fig.update_layout(xaxis = dict(tickmode = 'array',tickvals = [0, 1],ticktext = ["0","1"]))
         fig.update_layout(yaxis_title="Anzahl")
-        st.plotly_chart(fig, use_container_width=True,  config=config)
+        st.plotly_chart(fig, use_container_width=True, config=config)
     except:
         st.write("Verteilungsdiagramm kann nicht dargestellt werden, bitte Seite neu laden")
     df_leg=df[df["is_legendary"] == 0]
@@ -53,16 +53,16 @@ def main():
     for col in df_no:
         fig.add_trace(go.Box(y=df_no[col].values, name=df_no[col].name))
     fig.update_layout(title="Boxplots ausgewählter Spalten normaler Pokemons")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, config=config)
     fig = go.Figure()
     for col in df_leg:
         fig.add_trace(go.Box(y=df_leg[col].values, name=df_leg[col].name))
     fig.update_layout(title="Boxplots ausgewählter Spalten legendärer Pokemons")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, config=config)
     df_corr=df.corr().round(2)
     fig = px.imshow(df_corr, aspect="auto",title="Heatmap der Korrelationen",text_auto=True)
     #fig.update_layout(autosize=False,width=500,height=500)
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True, config=config)
     #st.dataframe(df_corr)
     st.markdown("""----""")
     st.title("👨‍🔬 Algorithmen zur Anomaly Detection")
