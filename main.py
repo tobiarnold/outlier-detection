@@ -70,10 +70,8 @@ def main():
     y = df["is_legendary"]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=split_size, random_state=42)
     sc = StandardScaler()
-    X_train = sc.fit_transform(X_train)
-    X_test = sc.transform(X_test)
-    y_train = sc.transform(y_train)
-    y_test  = sc.transform(y_yest)
+   #X_train = sc.fit_transform(X_train)
+   #X_test = sc.transform(X_test)
     try:
         if algo =="K-Nearest-Neighbor":
             knn = KNeighborsClassifier(n_neighbors= n_neighbors)
