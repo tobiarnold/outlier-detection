@@ -24,13 +24,12 @@ def main():
     st.markdown("""----""")
     with st.sidebar.subheader("💡 Algorithmus auswählen"):
         algo = st.sidebar.selectbox("Algorithmus auswählen", options=["K-Nearest-Neighbor", "One-Class SVM", "Isolation Forest"], index=0)
-    with st.sidebar.subheader("train_test_split"):
-        split_size = st.sidebar.slider("Aufteilen in Traings- und Testdaten:", 0.1, 0.9, 0.3, 0.1)
     with st.sidebar.subheader("Parameter auswählen"):
-            n_neighbors = st.sidebar.slider("n_neighbors für KNN auswählen:", 1, 10, 5, 1)
-            nu = st.sidebar.slider("nu für One-Class SVM auswählen:", 0.0001, 0.9999, 0.5, 0.01)
-            kernel=st.sidebar.selectbox("Kernel für One-Class SVM auswählen:",options=["linear", "poly", "rbf", "sigmoid"], index=2)
-            n_estimators = st.sidebar.slider("n_estimators für Isolation Forest auswählen:", 50, 500, 200, 10)
+        split_size = st.sidebar.slider("Aufteilen in Traings- und Testdaten:", 0.1, 0.9, 0.3, 0.1)
+        n_neighbors = st.sidebar.slider("n_neighbors für KNN auswählen:", 1, 10, 5, 1)
+        nu = st.sidebar.slider("nu für One-Class SVM auswählen:", 0.0001, 0.9999, 0.5, 0.01)
+        kernel=st.sidebar.selectbox("Kernel für One-Class SVM auswählen:",options=["linear", "poly", "rbf", "sigmoid"], index=2)
+        n_estimators = st.sidebar.slider("n_estimators für Isolation Forest auswählen:", 50, 500, 200, 10)
     st.title("👩‍💻 Tabelle")
     df=pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/outlier-detection/main/pokemon1.csv")
     df_show = df.style.format({"height_m": "{:,.1f}","weight_kg": "{:,.1f}"})
