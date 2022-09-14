@@ -22,7 +22,7 @@ def main():
                ⚠️ bei Zugriff mit mobilen Geräten ist der Filter für die Algorithmen standardmäßig ausgeblendet und lässt sich mit dem Pfeil oben links wieder einblenden
                """)
     st.markdown("""----""")
-    with st.sidebar.header("💡 Algorithmus auswählen"):
+    with st.sidebar.subheader("💡 Algorithmus auswählen"):
         algo = st.sidebar.selectbox("Algorithmus auswählen", options=["K-Nearest-Neighbor", "One-Class SVM", "Isolation Forest"], index=0)
     with st.sidebar.subheader("train_test_split"):
         split_size = st.sidebar.slider("Aufteilen in Traings- und Testdaten (Standard: 30% Testdaten):", 0.1, 0.9, 0.3, 0.1)
