@@ -29,6 +29,7 @@ def main():
     with st.sidebar.subheader("Parameter auswählen"):
             n_neighbors = st.sidebar.slider("n_neighbors für KNN auswählen:", 1, 10, 5, 1)
             nu = st.sidebar.slider("nu für One-Class SVM auswählen:", 0.0001, 0.9999, 0.5, 0.01)
+            kernel=st.sidebar.slider("Kernel für One-Class SVM auswählen:", "linear", "poly", "rbf", "sigmoid")
             n_estimators = st.sidebar.slider("n_estimators für Isolation Forest auswählen:", 50, 500, 200, 10)
     st.title("👩‍💻 Tabelle")
     df=pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/outlier-detection/main/pokemon1.csv")
@@ -92,7 +93,7 @@ def main():
             ax.set_title("Confusion Matrix")
             st.write(fig)
         elif algo =="One-Class SVM":
-            svm = OneClassSVM(nu=nu)
+            svm = OneClassSVM(kernel=kernel, nu=nu)
             svm.fit(X_train)
             y_predictions = svm.predict(X_test)
             y_predictions = [1 if i == -1 else 0 for i in y_predictions]
