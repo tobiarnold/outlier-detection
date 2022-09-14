@@ -22,7 +22,7 @@ def main():
                ⚠️ bei Zugriff mit mobilen Geräten ist der Filter für die Algorithmen standardmäßig ausgeblendet und lässt sich mit dem Pfeil oben links wieder einblenden
                """)
     st.markdown("""----""")
-    with st.sidebar.subheader("Parameter auswählen"):
+    with st.sidebar.subheader("💡 Parameter auswählen"):
         split_size = st.sidebar.slider("Aufteilen in Traings- und Testdaten:", 0.1, 0.9, 0.3, 0.1)
         n_neighbors = st.sidebar.slider("n_neighbors für KNN auswählen:", 1, 10, 5, 1)
         nu = st.sidebar.slider("nu für One-Class SVM auswählen:", 0.0001, 0.9999, 0.5, 0.01)
@@ -64,7 +64,7 @@ def main():
     #st.dataframe(df_corr)
     st.markdown("""----""")
     st.title("👨‍🔬 Algorithmen zur Anomaly Detection")
-    algo=st.selectbox("Algorithmus auswählen", options=["K-Nearest-Neighbor", "One-Class SVM", "Isolation Forest"], index=0)
+    algo=st.selectbox("💡 Algorithmus auswählen", options=["K-Nearest-Neighbor", "One-Class SVM", "Isolation Forest"], index=0)
     st.write("Du hast "+str(algo)+" gewählt.")
     X = df.drop(columns =["name","is_legendary"])
     y = df["is_legendary"]
