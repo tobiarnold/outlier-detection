@@ -23,7 +23,7 @@ def main():
                """)
     st.markdown("""----""")
     with st.sidebar.subheader("💡 Algorithmus auswählen"):
-        algo = st.sidebar.selectbox("Algorithmus auswählen", options=["K-Nearest-Neighbor", "One-Class SVM", "Isolation Forest"], index=0)
+        algo1 = st.sidebar.selectbox("Algorithmus auswählen", options=["K-Nearest-Neighbor", "One-Class SVM", "Isolation Forest"], index=0)
     with st.sidebar.subheader("Parameter auswählen"):
         split_size = st.sidebar.slider("Aufteilen in Traings- und Testdaten:", 0.1, 0.9, 0.3, 0.1)
         n_neighbors = st.sidebar.slider("n_neighbors für KNN auswählen:", 1, 10, 5, 1)
