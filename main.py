@@ -66,6 +66,7 @@ def main():
     #st.dataframe(df_corr)
     st.markdown("""----""")
     st.title("👨‍🔬 Algorithmen zur Anomaly Detection")
+    st.selectbox("Algorithmus auswählen", options=["K-Nearest-Neighbor", "One-Class SVM", "Isolation Forest"], index=0)
     st.write("Du hast "+str(algo)+" gewählt.")
     X = df.drop(columns =["name","is_legendary"])
     y = df["is_legendary"]
