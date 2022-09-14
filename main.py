@@ -25,7 +25,7 @@ def main():
     with st.sidebar.subheader("💡 Algorithmus auswählen"):
         algo = st.sidebar.selectbox("Algorithmus auswählen", options=["K-Nearest-Neighbor", "One-Class SVM", "Isolation Forest"], index=0)
     with st.sidebar.subheader("train_test_split"):
-        split_size = st.sidebar.slider("Aufteilen in Traings- und Testdaten (Standard: 30% Testdaten):", 0.1, 0.9, 0.3, 0.1)
+        split_size = st.sidebar.slider("Aufteilen in Traings- und Testdaten:", 0.1, 0.9, 0.3, 0.1)
     with st.sidebar.subheader("Parameter auswählen"):
             n_neighbors = st.sidebar.slider("n_neighbors für KNN auswählen:", 1, 10, 5, 1)
             nu = st.sidebar.slider("nu für One-Class SVM auswählen:", 0.0001, 0.9999, 0.5, 0.01)
