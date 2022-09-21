@@ -23,7 +23,7 @@ def main():
                """)
     st.markdown("""----""")
     with st.sidebar.subheader("💡 Parameter auswählen"):
-        split_size = st.sidebar.slider("Aufteilen in Traings- und Testdaten:", 0.1, 0.9, 0.3, 0.1)
+        split_size = st.sidebar.slider("Aufteilen in Traings- und Testdaten (Standard 30% Testdaten):", 0.1, 0.9, 0.3, 0.1)
         n_neighbors = st.sidebar.slider("n_neighbors für KNN auswählen:", 1, 10, 5, 1)
         nu = st.sidebar.slider("nu für One-Class SVM auswählen:", 0.0001, 0.9999, 0.5, 0.01)
         kernel=st.sidebar.selectbox("Kernel für One-Class SVM auswählen:",options=["linear", "poly", "rbf", "sigmoid"], index=0)
