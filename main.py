@@ -113,7 +113,7 @@ def main():
             ax = sns.heatmap(confusion_matrix, annot=True,fmt=".0f")
             ax.set_title("Confusion Matrix")
             st.write(fig)
-         elif algo =="Decision Tree":
+        elif algo =="Decision Tree":
             dec=DecisionTreeClassifier(random_state=0,max_depth=max_depth)
             dec.fit(X_train,y_train)
             y_predictions = iso.predict(X_test)
