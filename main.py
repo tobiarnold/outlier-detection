@@ -171,7 +171,7 @@ def main():
         elif algo =="Local Outlier Factor (LOF)":
             lof=LocalOutlierFactor(n_neighbors=n_neighbors)
             lof.fit(X_train)
-            y_predictions = lof.predict(X_test)
+            y_predictions = lof.fit_predict(X_test)
             y_predictions = [1 if i == -1 else 0 for i in y_predictions]
             st.text("Model Report:\n " + classification_report(y_test, y_predictions))
             st.markdown("")
