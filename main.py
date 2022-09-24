@@ -168,7 +168,7 @@ def main():
             ax = sns.heatmap(confusion_matrix, annot=True,fmt=".0f")
             ax.set_title("Confusion Matrix")
             st.write(fig)
-         elif algo =="Local Outlier Factor (LOF)":
+        elif algo =="Local Outlier Factor (LOF)":
             iso=IsolationForest(n_estimators=n_estimators)
             iso.fit(X_train)
             y_predictions = iso.predict(X_test)
