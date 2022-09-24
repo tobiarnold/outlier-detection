@@ -9,6 +9,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import OneClassSVM
 from sklearn.ensemble import IsolationForest
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.neighbors import LocalOutlierFactor
 from sklearn.metrics import classification_report
 
 def main():
