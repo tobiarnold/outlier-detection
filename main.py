@@ -114,9 +114,9 @@ def main():
             ax.set_title("Confusion Matrix")
             st.write(fig)
         elif algo =="Decision Tree":
-            dec=DecisionTreeClassifier(random_state=0,max_depth=max_depth)
+            dec=DecisionTreeClassifier(max_depth=max_depth)
             dec.fit(X_train,y_train)
-            y_predictions = iso.predict(X_test)
+            y_predictions = dec.predict(X_test)
             #y_predictions = [1 if i == -1 else 0 for i in y_predictions]
             st.text("Model Report:\n " + classification_report(y_test, y_predictions))
             st.markdown("")
