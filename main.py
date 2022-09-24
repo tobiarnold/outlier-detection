@@ -70,6 +70,7 @@ def main():
     st.title("👨‍🔬 Algorithmen zur Anomaly Detection")
     algo=st.selectbox("💡 Algorithmus auswählen", options=["K-Nearest-Neighbor (KNN)", "One-Class SVM", "Decision Tree","Random Forest","Isolation Forest","Local Outlier Factor (LOF)"], index=0)
     st.write("Du hast "+str(algo)+" gewählt.")
+    st.write("Zur Skalierung der Daten wurde der Standard Scaler verwendet.")
     X = df.drop(columns =["name","is_legendary"])
     y = df["is_legendary"]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=split_size, random_state=42)
