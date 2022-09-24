@@ -77,7 +77,7 @@ def main():
     X_train = sc.fit_transform(X_train)
     X_test = sc.transform(X_test)
     try:
-        if algo =="K-Nearest-Neighbor":
+        if algo =="K-Nearest-Neighbor (KNN)":
             knn = KNeighborsClassifier(n_neighbors= n_neighbors)
             knn.fit(X_train,y_train)
             y_predictions = knn.predict(X_test)
