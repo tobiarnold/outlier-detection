@@ -168,6 +168,25 @@ def main():
             ax = sns.heatmap(confusion_matrix, annot=True,fmt=".0f")
             ax.set_title("Confusion Matrix")
             st.write(fig)
+          elif algo =="Local Outlier Factor (LOF)":
+            iso=IsolationForest(n_estimators=n_estimators)
+            iso.fit(X_train)
+            y_predictions = iso.predict(X_test)
+            y_predictions = [1 if i == -1 else 0 for i in y_predictions]
+            st.text("Model Report:\n " + classification_report(y_test, y_predictions))
+            st.markdown("")
+            y_predictions = pd.Series(y_predictions, name="Predicted Labels")
+            y_test = y_test.to_frame().rename({"is_legendary": "Actual Labels"}, axis='columns')
+            y_test = y_test.reset_index()
+            y_test = y_test.drop(columns=["index"])
+            y_predictions = y_predictions.to_frame()
+            confusion_matrix = pd.concat([y_test, y_predictions], axis=1)
+            confusion_matrix = pd.crosstab(confusion_matrix["Actual Labels"], confusion_matrix["Predicted Labels"],
+                                           rownames=["Actual"], colnames=["Predicted"])
+            fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 5))
+            ax = sns.heatmap(confusion_matrix, annot=True,fmt=".0f")
+            ax.set_title("Confusion Matrix")
+            st.write(fig)
     except:
         st.write("Bitte anderen Parameter wählen")
 
