@@ -31,7 +31,7 @@ def main():
         nu = st.sidebar.slider("nu für One-Class SVM auswählen:", 0.0001, 0.9999, 0.5, 0.01)
         kernel=st.sidebar.selectbox("Kernel für One-Class SVM auswählen:",options=["linear", "poly", "rbf", "sigmoid"], index=0)
         n_estimators = st.sidebar.slider("n_estimators für Random Forest bzw. Isolation Forest auswählen:", 50, 500, 200, 10)
-        max_depth=st.sidebar.slider("Tiefe für Decision Tree auswählen:", 2, 20, 10, 1)
+        max_depth=st.sidebar.slider("Tiefe für Decision Tree bzw. Random Forest auswählen:", 2, 20, 10, 1)
     st.title("👩‍💻 Tabelle")
     df=pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/outlier-detection/main/pokemon1.csv")
     df_show = df.style.format({"height_m": "{:,.1f}","weight_kg": "{:,.1f}"})
@@ -133,7 +133,7 @@ def main():
             ax.set_title("Confusion Matrix")
             st.write(fig)
         elif algo =="Random Forest":
-            rf=RandomForestClassifier(n_estimators=n_estimators)
+            rf=RandomForestClassifier(n_estimators=n_estimators,max_depth=max_depth)
             rf.fit(X_train,y_train)
             y_predictions = rf.predict(X_test)
             st.text("Model Report:\n " + classification_report(y_test, y_predictions))
