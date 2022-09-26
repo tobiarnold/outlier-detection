@@ -25,7 +25,7 @@ def main():
                ⚠️ bei Zugriff mit mobilen Geräten ist der Filter für die Algorithmen standardmäßig ausgeblendet und lässt sich mit dem Pfeil oben links wieder einblenden
                """)
     st.markdown("""----""")
-    with st.sidebar.text("💡 Parameter auswählen:"):
+    with st.sidebar.subheader("💡 Parameter auswählen:"):
         split_size = st.sidebar.slider("Aufteilen in Traings- und Testdaten (Standard 30% Testdaten):", 0.1, 0.9, 0.3, 0.1)
         n_neighbors = st.sidebar.slider("n_neighbors für KNN bzw. LOF auswählen:", 1, 10, 5, 1)
         nu = st.sidebar.slider("nu für One-Class SVM auswählen:", 0.0001, 0.9999, 0.5, 0.01)
