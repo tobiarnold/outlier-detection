@@ -183,7 +183,7 @@ def main():
             y_predictions = y_predictions.to_frame()
             confusion_matrix = pd.concat([y_test, y_predictions], axis=1)
             confusion_matrix = pd.crosstab(confusion_matrix["Actual Labels"], confusion_matrix["Predicted Labels"],
-                                           rownames=["tatsächlich"], colnames=["vorhergesagt"])
+                                           rownames=["Actual"], colnames=["Predicted"])
             fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 5))
             ax = sns.heatmap(confusion_matrix, annot=True,fmt=".0f")
             ax.set_title("Confusion Matrix")
