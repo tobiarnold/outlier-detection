@@ -35,10 +35,10 @@ def main():
     st.title("👩‍💻 Tabelle")
     df=pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/outlier-detection/main/pokemon1.csv")
     def highlight_rows(row):
-       value = row.loc["is_legendary]
-       if value == 1:
-           color = "#ffffa1"
-       return ['background-color: {}'.format(color) for r in row]
+        value = row.loc["is_legendary]
+        if value == 1:
+            color = "#ffffa1"
+    return ['background-color: {}'.format(color) for r in row]
     #style1 = (lambda x: "background-color : #ffffa1" if x > 0 else '')
     #df_show = df.style.format({"height_m": "{:,.1f}","weight_kg": "{:,.1f}"}).applymap(style1, subset=["is_legendary"])
     df_show = df.style.format({"height_m": "{:,.1f}","weight_kg": "{:,.1f}"}).apply(highlight_rows, axis=1)
