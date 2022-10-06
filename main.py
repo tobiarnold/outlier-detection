@@ -36,7 +36,7 @@ def main():
     df=pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/outlier-detection/main/pokemon1.csv")
     style1 = (lambda x: "background-color : #ffffa1" if x > 0 else '')
     df_style = df.style.format({"height_m": "{:,.1f}","weight_kg": "{:,.1f}"})
-    df_style = df:style[df_style["is_legendary"]==1]
+    df_style = df_style[df_style["is_legendary"]==1]
     slice_ = pd.IndexSlice[df_style.index, df_style.columns]
     s = df.style.set_properties(**{"background-color": " #ffffa1"}, subset=slice_)
     st.dataframe(s)
