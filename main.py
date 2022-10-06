@@ -38,6 +38,7 @@ def main():
     df_style = df[df["is_legendary"]==1]
     slice_ = pd.IndexSlice[df_style.index, df_style.columns]
     s = df.style.set_properties(**{"background-color": " #ffffa1"}, subset=slice_)
+    s = s.style.format({"height_m": "{:,.1f}","weight_kg": "{:,.1f}"})
     st.dataframe(s)
     df_show = df.style.format({"height_m": "{:,.1f}","weight_kg": "{:,.1f}"}).applymap(style1, subset=["is_legendary"])
     st.dataframe(df_show)
