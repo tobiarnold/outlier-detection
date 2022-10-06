@@ -34,7 +34,7 @@ def main():
         max_depth=st.sidebar.slider("Tiefe für Decision Tree bzw. Random Forest auswählen:", 2, 50, 10, 1)
     st.title("👩‍💻 Tabelle")
     df=pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/outlier-detection/main/pokemon1.csv")
-    style1 = (lambda x: "background-color : #90EE90" if x > 0 else '')
+    style1 = (lambda x: "background-color : #ffffa1" if x > 0 else '')
     df_show = df.style.format({"height_m": "{:,.1f}","weight_kg": "{:,.1f}"}).applymap(style1, subset=["is_legendary"])
     st.dataframe(df_show)
     st.markdown("""----""")
