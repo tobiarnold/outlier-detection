@@ -35,7 +35,7 @@ def main():
     st.title("👩‍💻 Tabelle")
     df=pd.read_csv(r"https://raw.githubusercontent.com/tobiarnold/outlier-detection/main/pokemon1.csv")
     style1 = (lambda x: "background-color : #ffffa1" if x > 0 else '')
-    df_show = df.style.format({"height_m": "{:,.1f}","weight_kg": "{:,.1f}"}).applymap(style1, subset=["is_legendary"])
+    df_show = df.style.format({"height_m": "{:,.1f}","weight_kg": "{:,.1f}"}).applymap(style1, subset=["is_legendary"], axis=None)
     st.dataframe(df_show)
     st.markdown("""----""")
     st.title("📊 Diagramme")
