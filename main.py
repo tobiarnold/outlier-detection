@@ -63,7 +63,7 @@ def main():
         fig.add_trace(go.Box(y=df_leg[col].values, name=df_leg[col].name))
     fig.update_layout(title="Boxplots ausgewählter Spalten legendärer Pokemons")
     st.plotly_chart(fig, use_container_width=True, config=config)
-    df_corr=df.corr().round(2)
+    df_corr=df.corr(numeric_only = True).round(2)
     fig = px.imshow(df_corr, aspect="auto",title="Heatmap der Korrelationen",text_auto=True)
     #fig.update_layout(autosize=False,width=500,height=500)
     st.plotly_chart(fig, use_container_width=True, config=config)
